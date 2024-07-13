@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -10,4 +10,5 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class MyNavigationComponent {
 
+  @Input() navigationItemActive: string = '';
 }

@@ -12,11 +12,11 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a routerLink="home">Home</a></li>
-        <li><a routerLink="about">About</a></li>
-        <li><a routerLink="service">Service</a></li>
-        <li><a routerLink="work">Work</a></li>
-        <li><a routerLink="contact">Contact</a></li>
+        <li [class]="{'active' : (navigationItemActive == 'home')}"><a routerLink="home">Home</a></li>
+        <li [class]="{'active' : (navigationItemActive == 'about')}"><a routerLink="about">About</a></li>
+        <li [class]="{'active' : (navigationItemActive == 'service')}"><a routerLink="service">Service</a></li>
+        <li [class]="{'active' : (navigationItemActive == 'work')}"><a routerLink="work">Work</a></li>
+        <li [class]="{'active' : (navigationItemActive == 'contact')}"><a routerLink="contact">Contact</a></li>
       </ul>
     </div>
 

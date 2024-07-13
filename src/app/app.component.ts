@@ -12,6 +12,8 @@ import { MyFooterComponent } from './components/my-footer/my-footer.component';
 })
 export class AppComponent {
   title = 'pillole';
+
+  currentMenu: string = 'home';
   footerColor: string = 'defaultColor';
 
 
@@ -21,16 +23,21 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
+        this.updateNavigationItem(event.urlAfterRedirects);
         this.updateFooterColor(event.urlAfterRedirects);
       }
     });
   }
 
+
+  private updateNavigationItem(url: string) {
+    this.currentMenu = url.substring(1); // leva lo '/' iniziale
+  }
+
   private updateFooterColor(url: string) {
-    if (url === '/home' || url === '/about' || url === '/service' || url === '/work') {
+    if (url === '/home' || url === '/about' || url === '/service' || url === '/work')
       this.footerColor = 'white';
-    } else {
+    else
       this.footerColor = '#f9f9f9';
-    }
   }
 }
